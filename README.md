@@ -1,2 +1,2 @@
 # ourtubes
-liste de titres et d'albums qu'on a aimé
+liste de titres et d'albums qu'on a aimés
