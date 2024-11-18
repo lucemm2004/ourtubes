@@ -191,7 +191,7 @@ form input {
 @media screen and (min-width: 1024px) {
     .container,
     .message-container {
-        max-width: 800px;
+        max-width: 1000px;
     }
     h1 {
         font-size: 2rem;

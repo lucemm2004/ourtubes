@@ -10,7 +10,7 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"> -->
 
-    <link rel="stylesheet" href="../public/css/ourtubes.css">
+    <!-- <link rel="stylesheet" href="http://localhost/ourtubes/public/css/ourtubes.css"> -->
 
 
     <!-- Font Awesome  -->
@@ -28,6 +28,7 @@
         rel="stylesheet"
         href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
 
+    <link rel="stylesheet" href="http://localhost/ourtubes/public/css/ourtubes.css">
 
 </head>
 
@@ -55,7 +56,7 @@
                         <?php if (isset($_SESSION['user']) && !empty($_SESSION['user']['id'])) : ?>
                             <?php if (isset($_SESSION['user']['roles']) && in_array('ROLE_ADMIN', $_SESSION['user']['roles'])) : ?>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/<?= APP_NAME ?>/public/admin">Admin</a>
+                                    <a class="nav-link" href="/<?= APP_NAME ?>/admin">Admin</a>
                                 </li>
                             <?php endif; ?>
                             <!--
@@ -80,10 +81,10 @@
         </nav>
 
 
-        <?php if (!empty($_SESSION['message'])) : ?>
+        <?php if (!empty($_SESSION['success'])) : ?>
             <div class="alert alert-success" role="alert">
-                <?php echo $_SESSION['message'];
-                unset($_SESSION['message']); ?>
+                <?php echo $_SESSION['success'];
+                unset($_SESSION['success']); ?>
             </div>
         <?php endif; ?>
         <?php if (!empty($_SESSION['erreur'])) : ?>

@@ -2,6 +2,15 @@
 <?= $registerForm ?>
 <a href="/<?= APP_NAME ?>/user/login">Déjà inscrit - me connecter</a> -->
 
+<?php if (!empty($_SESSION['erreur'])) : ?>
+    <div class="alert alert-danger" role="alert">
+        <p>
+            <?php echo $_SESSION['erreur'];
+            unset($_SESSION['erreur']); ?>
+
+        </p>
+    </div>
+<?php endif; ?>
 
 <h1>Inscription</h1>
 <form action="" method="post">

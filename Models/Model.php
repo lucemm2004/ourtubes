@@ -77,6 +77,10 @@ class Model extends Db
         // die();
 
         // on exécute a requete
+        // var_dump('INSERT INTO ' . $this->table . ' (' . $liste_champs . ') ');
+        // var_dump($valeurs);
+        // die();
+
         return $this->requete('INSERT INTO ' . $this->table . ' (' . $liste_champs . ') VALUES(' . $liste_inter . ')', $valeurs);
     }
 
@@ -148,12 +152,17 @@ class Model extends Db
         // echo ('<p>sql => ' . $sql . '</p>');
         // die();
         // echo ('<p>attributs => ' . $attributs . '</p>');
+        // die();
 
         // on récupère l'instance de db
         $this->db = Db::getInstance();
         // on vérifie si on a des attributs
         if ($attributs !== null) {
             // on a une requete préparée
+            var_dump($sql);
+            var_dump(($attributs));
+            // die();
+
             $query = $this->db->prepare($sql);
             $query->execute($attributs);
             return $query;

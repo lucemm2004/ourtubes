@@ -9,6 +9,25 @@
 <a href="/<?= APP_NAME ?>/user/register">Par encore inscrit - m'inscrire</a>
  -->
 
+<?php if (!empty($_SESSION['erreur'])) : ?>
+    <div class="alert alert-danger" role="alert">
+        <p>
+            <?php echo $_SESSION['erreur'];
+            unset($_SESSION['erreur']); ?>
+        </p>
+    </div>
+<?php endif; ?>
+<?php if (!empty($_SESSION['success'])) : ?>
+    <div class="alert alert-success" role="alert">
+        <p>
+            <?php echo $_SESSION['success'];
+            unset($_SESSION['success']); ?>
+
+        </p>
+    </div>
+<?php endif; ?>
+
+
 <h1>Connexion</h1>
 <form action="" method="post">
     <div class="pseudoContainer">
